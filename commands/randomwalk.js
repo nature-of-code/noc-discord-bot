@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 // const fs = require("fs");
 
 module.exports = function (msg, args) {
+  console.log('generating random walk');
   const buffer = generateImage();
   const attachment = new Discord.MessageAttachment(buffer, 'randomwalk.png');
   msg.channel.send(`Here is your random walk!`, attachment);
