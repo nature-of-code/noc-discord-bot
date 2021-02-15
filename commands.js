@@ -4,19 +4,15 @@
 // https://thecodingtrain.com/learning/bots/discord/06-command-handler.html
 // https://youtu.be/B60Q74FHFBQ
 
-const gif = require("./commands/gif.js");
-const choochoo = require("./commands/choochoo.js");
-const generate = require("./commands/generate.js");
+const randomwalk = require('./commands/randomwalk.js');
 
-const commands = { choochoo, gif, generate };
+const commands = { randomwalk };
 
 module.exports = async function (msg) {
-  if (msg.channel.id == "715786219770085396") {
-    let tokens = msg.content.split(" ");
-    let command = tokens.shift();
-    if (command.charAt(0) === "!") {
-      command = command.substring(1);
-      commands[command](msg, tokens);
-    }
+  let tokens = msg.content.split(' ');
+  let command = tokens.shift();
+  if (command.charAt(0) === '!') {
+    command = command.substring(1);
+    commands[command](msg, tokens);
   }
 };

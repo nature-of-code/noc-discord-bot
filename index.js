@@ -4,20 +4,20 @@
 // https://thecodingtrain.com/learning/bots/discord/06-command-handler.html
 // https://youtu.be/B60Q74FHFBQ
 
-console.log("Beep beep! 🤖");
+console.log('Beep beep! 🤖');
 
-require("dotenv").config();
+require('dotenv').config();
 
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
 client.login(process.env.BOTTOKEN);
 
-client.on("ready", readyDiscord);
+client.on('ready', readyDiscord);
 
 function readyDiscord() {
-  console.log("💖");
+  console.log('💖');
 }
 
-const commandHandler = require("./commands");
+const commandHandler = require('./commands');
 
-client.on("message", commandHandler);
+client.on('message', commandHandler);
